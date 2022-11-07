@@ -1,0 +1,68 @@
+﻿<Window x:Class="ManagementMobile.ProfileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ManagementMobile"
+        mc:Ignorable="d"
+        Background="Transparent"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        x:Name="ProfileWPF"
+        Loaded="ProfileWindow_OnLoaded"
+        Title="ProfileWindow" Height="640" Width="575">
+    <Border BorderBrush="#CCD5AE" BorderThickness="5" CornerRadius="10">
+        <Grid Background="#CCD5AE">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Label Content="پروفایل کاربری" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#283618" FontSize="18" FontFamily="IRANSansWeb(FaNum)" Background="#CCD5AE" BorderBrush="#CCD5AE" Margin="0,0,0,15"/>
+            <Image x:Name="MyImage" Source="Resources/UserLogin.png" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Height="190"/>
+            <Label x:Name="ButtonChangeImage" Content="ویرایش عکس" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" Background="#CCD5AE"  Margin="80,0,0,100" Visibility="Hidden" Cursor="Hand" MouseLeftButtonDown="ButtonChangeImage_OnMouseLeftButtonDown"/>
+            <StackPanel x:Name="StackPanel1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Margin="0,80,0,0">
+                <WrapPanel Margin="80,0,0,10">
+                    <TextBox x:Name="txt_fullname"  Width="180" TextAlignment="Center" IsReadOnly="True"/>
+                    <Label  Content="نام کامل" BorderBrush="#CCD5AE" Background="#CCD5AE" Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" FontSize="14"/>
+                </WrapPanel>
+                <WrapPanel Margin="80,0,0,10">
+                    <TextBox  x:Name="txt_username" Width="180" TextAlignment="Center" IsReadOnly="True" PreviewTextInput="Txt_username_OnPreviewTextInput"/>
+                    <Label Content="نام کاربری" BorderBrush="#CCD5AE" Background="#CCD5AE" Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" FontSize="14"/>
+                </WrapPanel>
+                <WrapPanel>
+                    <Label x:Name="ButtonEdit" Content="ویرایش اطلاعات" Foreground="#283618" Background="#CCD5AE" FontSize="12" FontFamily="IRANSansWeb(FaNum)" Margin="80,0,0,0" MouseLeftButtonDown="ButtonEdit_OnMouseLeftButtonDown" Cursor="Hand"/>
+                    <Label x:Name="ButtonExit" Content="خروج از حساب کاربری" Foreground="#D8315B" Background="#CCD5AE" FontFamily="IRANSansWeb(FaNum)" Margin="10,0,0,0" MouseLeftButtonDown="ButtonExit_OnMouseLeftButtonDown" Cursor="Hand"/>
+                </WrapPanel>
+
+            </StackPanel>
+
+
+            <StackPanel x:Name="StackPanel2" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Margin="30,170,0,0" Visibility="Hidden">
+                <WrapPanel Margin="80,0,0,10">
+                    <TextBox x:Name="TextFullName"  Width="180" TextAlignment="Center" KeyDown="TextFullName_OnKeyDown"/>
+                    <Label  Content="نام کامل" BorderBrush="#CCD5AE" Background="#CCD5AE" Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" FontSize="14"/>
+                </WrapPanel>
+                <WrapPanel Margin="80,0,0,10">
+                    <TextBox x:Name="TextUserName" Width="180" TextAlignment="Center" PreviewTextInput="TextUserName_OnPreviewTextInput" KeyDown="TextUserName_OnKeyDown"/>
+                    <Label Content="نام کاربری" BorderBrush="#CCD5AE" Background="#CCD5AE" Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" FontSize="14"/>
+                </WrapPanel>
+                <WrapPanel Margin="80,0,0,10">
+                    <TextBox x:Name="Pass1" Width="180" TextAlignment="Center" PreviewTextInput="Pass1_OnPreviewTextInput" KeyDown="Pass1_OnKeyDown"/>
+                    <Label Content="رمز عبور" BorderBrush="#CCD5AE" Background="#CCD5AE" Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" FontSize="14"/>
+                </WrapPanel>
+                <WrapPanel Margin="80,0,0,0">
+                    <TextBox x:Name="Pass2" Width="180" TextAlignment="Center" PreviewTextInput="Pass2_OnPreviewTextInput" KeyDown="Pass2_OnKeyDown"/>
+                    <Label Content="تکرار رمز عبور" BorderBrush="#CCD5AE" Background="#CCD5AE" Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" FontSize="14"/>
+                </WrapPanel>
+                <WrapPanel Margin="80,10,0,0">
+                    <Label x:Name="btn_register" Content="ثبت اطلاعات" Background="#FEFAE0"  Foreground="#283618" FontSize="14" FontFamily="IRANSansWeb(FaNum)" Cursor="Hand" MouseLeftButtonDown="Btn_register_OnMouseLeftButtonDown" />
+                    <Label x:Name="btn_back" Content="بازگشت" Background="#CCD5AE"  Foreground="#283618" FontSize="14" FontFamily="IRANSansWeb(FaNum)" Cursor="Hand" Margin="25,0,0,0" MouseLeftButtonDown="Btn_back_OnMouseLeftButtonDown" />
+                </WrapPanel>
+            </StackPanel>
+            <Label x:Name="BottonBack" Content="بازگشت به صفحه اصلی" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Left"  FontFamily="IRANSansWeb(FaNum)" Background="#CCD5AE" Foreground="#283618" Margin="5" MouseLeftButtonDown="ButtonBack_OnMouseLeftButtonDown" Cursor="Hand"/>
+        </Grid>
+    </Border>
+</Window>

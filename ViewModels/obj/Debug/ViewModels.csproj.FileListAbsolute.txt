@@ -1,0 +1,6 @@
+C:\Users\hhhh\source\Oop\ManagementMobile\ViewModels\bin\Debug\ViewModels.dll
+C:\Users\hhhh\source\Oop\ManagementMobile\ViewModels\bin\Debug\ViewModels.pdb
+C:\Users\hhhh\source\Oop\ManagementMobile\ViewModels\obj\Debug\ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\hhhh\source\Oop\ManagementMobile\ViewModels\obj\Debug\ViewModels.dll
+C:\Users\hhhh\source\Oop\ManagementMobile\ViewModels\obj\Debug\ViewModels.pdb
+C:\Users\hhhh\source\Oop\ManagementMobile\ViewModels\obj\Debug\ViewModels.csproj.AssemblyReference.cache

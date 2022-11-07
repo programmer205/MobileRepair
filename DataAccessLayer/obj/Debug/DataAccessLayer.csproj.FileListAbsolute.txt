@@ -1,0 +1,16 @@
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\bin\Debug\Entities.dll
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\bin\Debug\Entities.pdb
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.vr1.resources
+C:\Users\hhhh\source\Oop\ManagementMobile\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.GenerateResource.cache

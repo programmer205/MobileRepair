@@ -1,0 +1,35 @@
+﻿<Window x:Class="ManagementMobile.Msg.MyMsgBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ManagementMobile.Msg"
+        mc:Ignorable="d"
+        Background="Transparent"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Name="MsgBoxWPF"
+        Title="MyMsgBox" Height="250" Width="500">
+    <Border BorderBrush="#7678ED" BorderThickness="5" CornerRadius="10" x:Name="my_border">
+        <Grid Background="#7678ED" x:Name="mygrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="51*"/>
+                <RowDefinition Height="109*"/>
+                <RowDefinition Height="80*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="Image" Source="../Resources/warning.png" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Margin="0,0,0.4,0" Width="35"/>
+            <Label  Content="اخطار" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,40.4,0" Foreground="#f2f2f2" FontFamily="IRANSansWeb(FaNum)" Background="#7678ED" x:Name="lbl_title" Height="34" Width="90"/>
+            <RichTextBox x:Name="txt_info" Background="#7678ED" Grid.Row="1" Grid.ColumnSpan="2" Foreground="#f2f2f2" IsReadOnly="True" FlowDirection="RightToLeft" FontSize="14"/>
+            <Button x:Name="btn_Cancel" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="خیر" Background="#7678ED" Foreground="#f2f2f2" Margin="5,0,0,5" FontFamily="IRANSansWeb(FaNum)" Click="Btn_Cancel_OnClick" Cursor="Hand" Width="55" Height="42"/>
+            <Button x:Name="btn_Ok" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="بله" Background="#7678ED" Foreground="#f2f2f2" Margin="74,0,0,5" FontFamily="IRANSansWeb(FaNum)" Click="Btn_Ok_OnClick" Cursor="Hand" Height="42" Width="55"/>
+            <TextBox Grid.Row="1" Background="White" x:Name="MyText" Grid.ColumnSpan="2" Width="200" TextAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden"/>
+            <Label x:Name="Label_return" Content="لطفا نام فایل را به انگلیسی تایپ کنید" Background="#7678ED" BorderBrush="#7678ED" FontFamily="IRANSansWeb(FaNum)" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#F2F2F2" Visibility="Hidden"/>
+        </Grid>
+    </Border>
+</Window>

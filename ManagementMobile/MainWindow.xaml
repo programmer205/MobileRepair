@@ -1,0 +1,156 @@
+﻿<Window x:Class="ManagementMobile.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:local="clr-namespace:ManagementMobile"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        x:Name="Main"
+        Loaded="MainWindow_OnLoaded"
+        Title="MainWindow" Height="720" Width="1280">
+    <Border BorderBrush="#D4A373" CornerRadius="10" BorderThickness="5">
+        <Grid Background="#D4A373">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="#FEFAE0" BorderThickness="5" CornerRadius="10" Grid.RowSpan="2" Grid.ColumnSpan="12" Margin="5">
+                <Rectangle Fill="#FEFAE0"/>
+            </Border>
+            <Border BorderBrush="#CCD5AE" BorderThickness="5" CornerRadius="10" Grid.Column="9" Grid.ColumnSpan="3" Grid.RowSpan="10" Grid.Row="2" Margin="5">
+                <Rectangle Fill="#CCD5AE"/>
+            </Border>
+            <Border BorderBrush="#FEFAE0" BorderThickness="5" CornerRadius="10" Grid.ColumnSpan="3" Grid.RowSpan="3" Grid.Row="2" Margin="5">
+                <Rectangle Fill="#FEFAE0"/>
+            </Border>
+            <Border BorderBrush="#FEFAE0" BorderThickness="5" CornerRadius="10" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="3" Grid.Row="2" Margin="5">
+                <Rectangle Fill="#FEFAE0"/>
+            </Border>
+            <Border BorderBrush="#FAEDCD" BorderThickness="5" CornerRadius="10" Grid.Column="6" Grid.ColumnSpan="3" Grid.RowSpan="3" Grid.Row="2" Margin="5">
+                <Rectangle Fill="#FAEDCD"/>
+            </Border>
+            <Border BorderBrush="#FEFAE0" BorderThickness="5" CornerRadius="10" Grid.Column="6"  Grid.ColumnSpan="3" Grid.RowSpan="6" Grid.Row="5" Margin="5">
+                <Rectangle Fill="#FEFAE0"/>
+            </Border>
+            <Border BorderBrush="#FEFAE0" BorderThickness="5" CornerRadius="10" Grid.Column="6"  Grid.ColumnSpan="3" Grid.RowSpan="2" Grid.Row="11" Margin="5">
+                <Rectangle Fill="#FEFAE0"/>
+            </Border>
+            <Border BorderBrush="#FAEDCD" BorderThickness="5" CornerRadius="10"  Grid.ColumnSpan="6" Grid.RowSpan="7" Grid.Row="5" Margin="5">
+                <Rectangle Fill="#FAEDCD"/>
+            </Border>
+            <TextBlock Text="نرم افزار تعمیرگاه موبایل" Grid.Row="2" Grid.RowSpan="2" Grid.Column="9" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" FontWeight="Bold" Foreground="#283618" Margin="0,10,0,0" FontFamily="IRANSansWeb(FaNum)"/>
+            <WrapPanel Grid.Column="9" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="2" Margin="0,70,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="Customers_OnMouseLeftButtonDown">
+                <TextBlock FontSize="22" FontWeight="Medium" VerticalAlignment="Center" Text="بخش مشتریان"  Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" />
+                <Image Source="/Resources/Member.png" />
+            </WrapPanel>
+            <WrapPanel Grid.Column="9" Grid.ColumnSpan="3" Grid.Row="3" Grid.RowSpan="2" Margin="0,70,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="Phone_OnMouseLeftButtonDown">
+                <TextBlock FontSize="22" FontWeight="Medium" VerticalAlignment="Center" Text="پذیرش جدید"  Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" />
+                <Image Source="/Resources/Phone.png" />
+            </WrapPanel>
+            <WrapPanel Grid.Column="9" Grid.ColumnSpan="3" Grid.Row="4" Grid.RowSpan="2" Margin="0,70,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="Invoice_OnMouseLeftButtonDown">
+                <TextBlock FontSize="22" FontWeight="Medium" VerticalAlignment="Center" Text="فاکتورها"  Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" />
+                <Image Source="Resources/Invoice.png " />
+            </WrapPanel>
+            <WrapPanel Grid.Column="9" Grid.ColumnSpan="3" Grid.Row="5" Grid.RowSpan="2" Margin="0,70,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="Reminder_OnMouseLeftButtonDown">
+                <TextBlock FontSize="22" FontWeight="Medium" VerticalAlignment="Center" Text="یادآورها"  Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" />
+                <Image Source="Resources/Reminder.png" />
+            </WrapPanel>
+            <WrapPanel Grid.Column="9" Grid.ColumnSpan="3" Grid.Row="6" Grid.RowSpan="2" Margin="0,70,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="Repair_OnMouseLeftButtonDown">
+                <TextBlock FontSize="22" FontWeight="Medium" VerticalAlignment="Center" Text="تعمیرات"  Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" />
+                <Image Source="Resources/Tools.png" />
+            </WrapPanel>
+            <WrapPanel Grid.Column="9" Grid.ColumnSpan="3" Grid.Row="7" Grid.RowSpan="2" Margin="0,70,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="User_OnMouseLeftButtonDown">
+                <TextBlock FontSize="22" FontWeight="Medium" VerticalAlignment="Center" Text="کاربران"  Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" />
+                <Image Source="Resources/User.png" />
+            </WrapPanel>
+            <WrapPanel Grid.Column="9" Grid.ColumnSpan="3" Grid.Row="8" Grid.RowSpan="2" Margin="0,70,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="Message_OnMouseLeftButtonDown">
+                <TextBlock FontSize="22" FontWeight="Medium" VerticalAlignment="Center" Text="پنل پیامکی"  Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" />
+                <Image Source="Resources/sms.png" />
+            </WrapPanel>
+            <WrapPanel Grid.Column="9" Grid.ColumnSpan="3" Grid.Row="9" Grid.RowSpan="2" Margin="0,70,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="Report_OnMouseLeftButtonDown">
+                <TextBlock FontSize="22" FontWeight="Medium" VerticalAlignment="Center" Text="گزارشات"  Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" />
+                <Image Source="Resources/Report.png" />
+            </WrapPanel>
+            <WrapPanel Grid.Column="9" Grid.ColumnSpan="3" Grid.Row="10" Grid.RowSpan="2" Margin="0,70,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="Activity_OnMouseLeftButtonDown">
+                <TextBlock FontSize="22" FontWeight="Medium" VerticalAlignment="Center" Text="فعالیت ها"  Foreground="#283618" FontFamily="IRANSansWeb(FaNum)" />
+                <Image Source="Resources/Activity.png" />
+            </WrapPanel>
+            <local:MyClock Grid.Row="11" Grid.Column="6" Grid.ColumnSpan="3"/>
+            <hc:PersianCalendar Grid.Row="5" Grid.Column="6" Grid.ColumnSpan="3" Grid.RowSpan="6" Background="#FFFEFAE0"/>
+            <TextBlock  Text="یادآور های امروز" FontSize="30" FontWeight="Medium" Foreground="#283618" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="0,20,0,0" FontFamily="IRANSansWeb(FaNum)"/>
+            <Image Source="Resources/Notification.png" Height="50" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Right" Margin="0,15,60,-10" />
+            <TextBlock x:Name="TextReminderCount" Text="20" FontSize="60" FontWeight="Medium" Foreground="#283618" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="0,5,80,-15" FontFamily="IRANSansWeb(FaNum)" />
+
+            <TextBlock Text="تعداد دستگاه تعمیری" FontSize="30" FontWeight="Medium" Foreground="#283618" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="0,20,0,0" FontFamily="IRANSansWeb(FaNum)"/>
+            <Image Source="Resources/Tools.png" Height="50" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Right" Margin="0,15,60,-10"/>
+            <TextBlock x:Name="TextRepairCount" Text="10" FontSize="60" FontWeight="Medium" Foreground="#283618" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="0,5,80,-15" FontFamily="IRANSansWeb(FaNum)" />
+
+            <TextBlock Text="تعداد مشتریان" FontSize="30" FontWeight="Medium" Foreground="#283618" Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="0,20,0,0" FontFamily="IRANSansWeb(FaNum)"/>
+            <Image Source="Resources/Member.png" Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Right" Margin="0,15,60,-10"/>
+            <TextBlock x:Name="TextCustomerCount" Text="452" FontSize="60" FontWeight="Medium" Foreground="#283618" Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="0,5,80,-15" FontFamily="IRANSansWeb(FaNum)" />
+            <Image Source="Resources/Power.png" Grid.Row="0" Grid.RowSpan="2" Height="35" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="Leave" MouseLeftButtonDown="Leave_OnMouseLeftButtonDown" Cursor="Hand" ToolTip="خروج از برنامه"/>
+            <Image x:Name="Profile" Source="Resources/Person.png" Grid.RowSpan="2" Height="35" Margin="40,0,0,0" Cursor="Hand" MouseLeftButtonDown="Profile_OnMouseLeftButtonDown" ToolTip="پروفایل کاربری"/>
+            <ScrollViewer  Grid.Row="5" Grid.RowSpan="7" Grid.ColumnSpan="6" Margin="10">
+                <StackPanel x:Name="StackPanel1"></StackPanel>
+            </ScrollViewer>
+            <Label Content="نام کاربری" Grid.Column="11" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#283618" Background="#FEFAE0" BorderBrush="#FEFAE0" Grid.RowSpan="2" FontFamily="IRANSansWeb(FaNum)"/>
+            <Label x:Name="Label_UserName" Grid.Column="10" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#283618" Background="#FEFAE0" BorderBrush="#FEFAE0" Grid.RowSpan="2" FontFamily="IRANSansWeb(FaNum)" Margin="35.8,19,87.4,17.4"/>
+            <Image x:Name="ButtonSetting" Source="Resources/Setting.png" Margin="90,19,85.8,17.4" Grid.RowSpan="2" Grid.ColumnSpan="2" Cursor="Hand" MouseLeftButtonDown="ButtonSetting_OnMouseLeftButtonDown" ToolTip="تنظیمات"/>
+            <Image x:Name="btn_about" Source="Resources/AboutMain.png" Grid.RowSpan="2" Cursor="Hand" Margin="9.6,18,37.8,14.4" Grid.Column="1" Height="38" MouseLeftButtonDown="Btn_about_OnMouseLeftButtonDown" ToolTip="درباره نرم افزار"/>
+        </Grid>
+    </Border>
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static local:MainWindow.ButtonLeave}" 
+                        Executed="LeaveMethod" />
+        <CommandBinding Command="{x:Static local:MainWindow.ButtonCustomer}" 
+                        Executed="CustomerMethod" />
+        <CommandBinding Command="{x:Static local:MainWindow.ButtonActivity}" 
+                        Executed="ActivityMethod" />
+        <CommandBinding Command="{x:Static local:MainWindow.ButtonInvoice}" 
+                        Executed="InvoiceMethod" />
+        <CommandBinding Command="{x:Static local:MainWindow.ButtonPhone}" 
+                        Executed="PhoneMethod" />
+        <CommandBinding Command="{x:Static local:MainWindow.ButtonRepair}" 
+                        Executed="RepairMethod" />
+        <CommandBinding Command="{x:Static local:MainWindow.ButtonReport}" 
+                        Executed="ReportMethod" />
+        <CommandBinding Command="{x:Static local:MainWindow.ButtonReminder}" 
+                        Executed="ReminderMethod" />
+        <CommandBinding Command="{x:Static local:MainWindow.ButtonUser}" 
+                        Executed="UserMethod" />
+        <CommandBinding Command="{x:Static local:MainWindow.ButtonMessage}" 
+                        Executed="MessageMethod" />
+        <CommandBinding Command="{x:Static local:MainWindow.btn_setting}" 
+                        Executed="SettingMethod" />
+    </Window.CommandBindings>
+</Window>

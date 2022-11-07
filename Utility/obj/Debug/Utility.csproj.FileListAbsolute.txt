@@ -1,0 +1,6 @@
+C:\Users\hhhh\source\Oop\ManagementMobile\Utility\bin\Debug\Utility.dll
+C:\Users\hhhh\source\Oop\ManagementMobile\Utility\bin\Debug\Utility.pdb
+C:\Users\hhhh\source\Oop\ManagementMobile\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+C:\Users\hhhh\source\Oop\ManagementMobile\Utility\obj\Debug\Utility.dll
+C:\Users\hhhh\source\Oop\ManagementMobile\Utility\obj\Debug\Utility.pdb
+C:\Users\hhhh\source\Oop\ManagementMobile\Utility\obj\Debug\Utility.csproj.AssemblyReference.cache

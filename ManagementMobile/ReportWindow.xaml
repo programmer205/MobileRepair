@@ -1,0 +1,139 @@
+﻿<Window x:Class="ManagementMobile.ReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:local="clr-namespace:ManagementMobile"
+        mc:Ignorable="d"
+        Background="Transparent"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        KeyDown="ReportWindow_OnKeyDown"
+        Title="ReportWindow" Height="680" Width="1150">
+    <Border BorderBrush="#D4A373" BorderThickness="5" CornerRadius="10">
+        <Grid Background="#D4A373">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="#FAEDCD" BorderThickness="3" CornerRadius="10" Grid.Column="3" Margin="5">
+                <Rectangle Fill="#FAEDCD"/>
+            </Border>
+            <WrapPanel VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="3" Margin="0,10,0,0" >
+                <TextBlock Text="لیست گزارشات" FontSize="18" Foreground="#D4A373" VerticalAlignment="Center" FontFamily="IRANSansWeb(FaNum)" FontWeight="Bold" x:Name="contacts" Margin="0,5,0,0"/>
+                <Image Source="Resources/ReportWindow.png" Height="28"/>
+            </WrapPanel>
+            <CheckBox x:Name="CustomerCheck" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,100,15,0" />
+            <Label Content="لیست مشتریان ثبت نام شده" Grid.Column="4" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,90,40,0" Background="#FAEDCD" BorderBrush="#FAEDCD" Foreground="#D4A373" FontFamily="IRANSansWeb(FaNum)" FontSize="16"/>
+            <CheckBox x:Name="ActivityCheck" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,160,15,0" />
+            <Label Content="لیست فعالیت کاربران" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,150,40,0" Background="#FAEDCD" BorderBrush="#FAEDCD" Foreground="#D4A373" FontFamily="IRANSansWeb(FaNum)" FontSize="16"/>
+            <CheckBox x:Name="PhoneCkeck" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,220,15,0" />
+            <Label Content="لیست موبایل های تعمیری" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,210,40,0" Background="#FAEDCD" BorderBrush="#FAEDCD" Foreground="#D4A373" FontFamily="IRANSansWeb(FaNum)" FontSize="16"/>
+            <CheckBox x:Name="UserCkeck" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,280,15,0" />
+            <Label Content="لیست کاربران" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,270,40,0" Background="#FAEDCD" BorderBrush="#FAEDCD" Foreground="#D4A373" FontFamily="IRANSansWeb(FaNum)" FontSize="16"/>
+            <CheckBox x:Name="SellCkeck" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,340,15,0" />
+            <Label Content="لیست فروش" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,330,40,0" Background="#FAEDCD" BorderBrush="#FAEDCD" Foreground="#D4A373" FontFamily="IRANSansWeb(FaNum)" FontSize="16"/>
+            <Label Content=":از تاریخ" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right"  Margin="0,400,10,0"  Background="#FAEDCD" BorderBrush="#FAEDCD" Foreground="#D4A373" FontFamily="IRANSansWeb(FaNum)" FontSize="16"/>
+            <hc:PersianDatePicker x:Name="StartDate" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right"  Margin="0,390,80,0" Width="180" Height="50"/>
+            <Label Content=":تا تاریخ" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right"  Margin="0,480,10,0"  Background="#FAEDCD" BorderBrush="#FAEDCD" Foreground="#D4A373" FontFamily="IRANSansWeb(FaNum)" FontSize="16"/>
+            <hc:PersianDatePicker x:Name="EndDate" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right"  Margin="0,470,80,0" Width="180" Height="50"/>
+            <Label x:Name="btn_show"  Grid.Column="3"  VerticalAlignment="Bottom" HorizontalAlignment="Left"  Margin="15,0,0,50" Content="نمایش گزارش"  FontSize="18" Background="#283618" Foreground="#D4A373" FontFamily="IRANSansWeb(FaNum)" Height="46" Cursor="Hand" MouseLeftButtonDown="Btn_show_OnMouseLeftButtonDown" ToolTip="Ctrl+S"  />
+            <Label x:Name="btn_print"  Grid.Column="3"  VerticalAlignment="Bottom" HorizontalAlignment="Right"  Margin="0,0,15,50" Content="چاپ گزارش"  FontSize="18" Background="#283618" Foreground="#D4A373" FontFamily="IRANSansWeb(FaNum)" Height="46" Cursor="Hand" MouseLeftButtonDown="Btn_print_OnMouseLeftButtonDown" ToolTip="Ctrl+p" />
+            <Border BorderBrush="#FAEDCD" BorderThickness="3" Grid.ColumnSpan="3" CornerRadius="10" Margin="5">
+                <Rectangle Fill="#FAEDCD"/>
+            </Border>
+            <DataGrid x:Name="DataGridCustomer"  Grid.ColumnSpan="3" Margin="10,30,10,50" Background="#FEFAE0" Foreground="#F2F2F2" BorderBrush="#F2F2F2" ColumnHeaderStyle="{StaticResource Attacktogrid}"  CanUserResizeColumns="False" AutoGenerateColumns="False" CanUserAddRows="False" CanUserReorderColumns="False" CanUserSortColumns="False"  CanUserDeleteRows="False" CanUserResizeRows="False" IsReadOnly="True"  FlowDirection="RightToLeft" Visibility="Hidden">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="آیدی" Binding="{Binding CustomerId}" Visibility="Hidden"/>
+                    <DataGridTextColumn Header="ردیف" Binding="{Binding RowId}"/>
+                    <DataGridTextColumn Header="نام" Binding="{Binding FullName}"/>
+                    <DataGridTextColumn Header="تلفن" Binding="{Binding PhoneNumber }"/>
+                    <DataGridTextColumn Header="تاریخ" Binding="{Binding RegDate}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid x:Name="DataGridActivity"  Grid.ColumnSpan="3" Margin="10,30,10,50" Background="#FEFAE0" Foreground="#F2F2F2" BorderBrush="#F2F2F2" ColumnHeaderStyle="{StaticResource Attacktogrid}"  CanUserResizeColumns="False" AutoGenerateColumns="False" CanUserAddRows="False" CanUserReorderColumns="False" CanUserSortColumns="False"  CanUserDeleteRows="False" CanUserResizeRows="False" IsReadOnly="True"  FlowDirection="RightToLeft" Visibility="Hidden">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ActivityId " Binding="{Binding ActivityId}" Visibility="Hidden"/>
+                    <DataGridTextColumn Header="Title" Binding="{Binding Title}"/>
+                    <DataGridTextColumn Header="UserName" Binding="{Binding UserName}"/>
+                    <DataGridTextColumn Header="CustomerName" Binding="{Binding CustomerName}"/>
+                    <DataGridTextColumn Header="Info" Binding="{Binding Info}"/>
+                    <DataGridTextColumn Header="Date" Binding="{Binding RegDate}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid x:Name="DataGridInvoice"  Grid.ColumnSpan="3" Margin="10,30,10,50" Background="#FEFAE0" Foreground="#F2F2F2" BorderBrush="#F2F2F2" ColumnHeaderStyle="{StaticResource Attacktogrid}"  CanUserResizeColumns="False" AutoGenerateColumns="False" CanUserAddRows="False" CanUserReorderColumns="False" CanUserSortColumns="False"  CanUserDeleteRows="False" CanUserResizeRows="False" IsReadOnly="True"  FlowDirection="RightToLeft" Visibility="Hidden">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="آیدی" Binding="{Binding InvoiceId}" Visibility="Hidden"/>
+                    <DataGridTextColumn Header="ردیف" Binding="{Binding RowId}"/>
+                    <DataGridTextColumn Header="شماره فاکتور" Binding="{Binding InvoiceNumber}"/>
+                    <DataGridTextColumn Header="تاریخ صدور" Binding="{Binding RegDate}"/>
+                    <DataGridTextColumn Header="قیمت نهایی" Binding="{Binding FinalPrice }"/>
+                    <DataGridTextColumn Header="ثبت کننده فاکتور" Binding="{Binding UserName}"/>
+                    <DataGridTextColumn Header="نام مشتری" Binding="{Binding CustomerName}"/>
+                    <DataGridTextColumn Header="شماره تلفن مشتری" Binding="{Binding PhoneNumber}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid x:Name="DataGridPhone"  Grid.ColumnSpan="3" Margin="10,30,10,50" Background="#FEFAE0" Foreground="#F2F2F2" BorderBrush="#F2F2F2" ColumnHeaderStyle="{StaticResource Attacktogrid}"  CanUserResizeColumns="False" AutoGenerateColumns="False" CanUserAddRows="False" CanUserReorderColumns="False" CanUserSortColumns="False"  CanUserDeleteRows="False" CanUserResizeRows="False" IsReadOnly="True"  FlowDirection="RightToLeft" Visibility="Hidden">
+                <DataGrid.Columns>
+                        <DataGridTextColumn Header="آیدی" Binding="{Binding PhoneID}" Visibility="Hidden"/>
+                        <DataGridTextColumn Header="ردیف" Binding="{Binding RowId}"/>
+                        <DataGridTextColumn Header="شماره پذیرش" Binding="{Binding ReceptionNumber}" Width="120"/>
+                        <DataGridTextColumn Header="مدل موبایل" Binding="{Binding Model}" Width="120"/>
+                        <DataGridTextColumn Header="بارکد" Binding="{Binding BarCode }" Width="130"/>
+                        <DataGridTextColumn Header="تاریخ ثبت" Binding="{Binding RegDate}"/>
+                        <DataGridTextColumn Header="وضعیت" Binding="{Binding IsDone}"/>
+                        <DataGridTextColumn Header="توضیحات" Binding="{Binding Description}"/>
+                        <DataGridTextColumn Header="ویزیت" Binding="{Binding Visit}"/>
+                        <DataGridTextColumn Header="قیمت حدودی" Binding="{Binding Price}" Width="90"/>
+                        <DataGridTextColumn Header="نام مشتری" Binding="{Binding CustomerName}"/>
+                        <DataGridTextColumn Header="شماره تلفن مشتری" Binding="{Binding PhoneNumber}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid x:Name="DataGridUser"  Grid.ColumnSpan="3" Margin="10,30,10,50" Background="#FEFAE0" Foreground="#F2F2F2" BorderBrush="#F2F2F2" ColumnHeaderStyle="{StaticResource Attacktogrid}"  CanUserResizeColumns="False" AutoGenerateColumns="False" CanUserAddRows="False" CanUserReorderColumns="False" CanUserSortColumns="False"  CanUserDeleteRows="False" CanUserResizeRows="False" IsReadOnly="True"  FlowDirection="RightToLeft" Visibility="Hidden">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="آیدی" Binding="{Binding UserId}" Visibility="Hidden"/>
+                    <DataGridTextColumn Header="ردیف" Binding="{Binding RowId}"/>
+                    <DataGridTextColumn Header="نام" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="نام کاربری" Binding="{Binding UserName }"/>
+                    <DataGridTextColumn Header="تاریخ ثبت نام" Binding="{Binding RegDate}"/>
+                    <DataGridTextColumn Header="سمت" Binding="{Binding Side}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label  HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="#D8315B" Content="بازگشت به صفحه اصلی" Height="30" Margin="37,0,0,10.4" Foreground="#F2F2F2" FontFamily="IRANSansWeb(FaNum)" FontSize="11" RenderTransformOrigin="1.06,0.9" x:Name="Ex_btn" Cursor="Hand" MouseLeftButtonDown="Ex_btn_OnMouseLeftButtonDown" ToolTip="Ctrl+L"/>
+            <Image Source="Resources/Left.png" HorizontalAlignment="Left" VerticalAlignment="Bottom"  Height="31" RenderTransformOrigin="1.323,0.536" Margin="6,0,0,9.4" Cursor="Hand" MouseLeftButtonDown="Ex_btn_OnMouseLeftButtonDown" ToolTip="Ctrl+L"/>
+        </Grid>
+    </Border>
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static local:ReportWindow.ButtonLeave}" 
+                        Executed="LeaveMethod" />
+        <CommandBinding Command="{x:Static local:ReportWindow.ButtonCustomer}" 
+                        Executed="CustomerMethod" />
+        <CommandBinding Command="{x:Static local:ReportWindow.ButtonActivity}" 
+                        Executed="ActivityMethod" />
+        <CommandBinding Command="{x:Static local:ReportWindow.ButtonInvoice}" 
+                        Executed="InvoiceMethod" />
+        <CommandBinding Command="{x:Static local:ReportWindow.ButtonPhone}" 
+                        Executed="PhoneMethod" />
+        <CommandBinding Command="{x:Static local:ReportWindow.ButtonRepair}" 
+                        Executed="RepairMethod" />
+        <CommandBinding Command="{x:Static local:ReportWindow.ButtonReport}" 
+                        Executed="ReportMethod" />
+        <CommandBinding Command="{x:Static local:ReportWindow.ButtonReminder}" 
+                        Executed="ReminderMethod" />
+        <CommandBinding Command="{x:Static local:ReportWindow.ButtonUser}" 
+                        Executed="UserMethod" />
+        <CommandBinding Command="{x:Static local:ReportWindow.ButtonMessage}" 
+                        Executed="MessageMethod" />
+        <CommandBinding Command="{x:Static local:ReportWindow.ButtonSetting}" 
+                        Executed="SettingMethod" />
+        <CommandBinding Command="{x:Static local:ReportWindow.ButtonPrint}" 
+                        Executed="PrintMethod" />
+        <CommandBinding Command="{x:Static local:ReportWindow.ButtonShow}" 
+                        Executed="ShowMethod" />
+    </Window.CommandBindings>
+</Window>
